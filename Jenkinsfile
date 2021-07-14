@@ -6,7 +6,7 @@ pipeline {
             steps {
                 sh '''
                 echo 'Building..'
-                docker build -t rubyapp .
+                docker build -t flask:latest .
                 '''
             }
         }
@@ -20,7 +20,10 @@ pipeline {
         }
         stage('Deploy') {
             steps {
+                sh '''
                 echo 'Deploying....'
+                docker run -p 5000:5000 flask
+                '''
             }
         }
     }
