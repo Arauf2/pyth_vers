@@ -6,8 +6,8 @@ pipeline {
             steps {
                 sh '''
                 echo 'Building..'
-                docker stop $(docker ps -a -q)
-                docker rm (docker ps -a |grep flask |awk '{print $1}')
+                #docker stop $(docker ps -a -q)
+                #docker rm (docker ps -a |grep flask |awk '{print $1}')
                 docker build -t flask:latest .
                 '''
             }
