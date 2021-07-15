@@ -24,7 +24,7 @@ pipeline {
             steps {
                 sh '''
                 echo 'Deploying....'
-                docker run -p 5000:5000 flask
+                docker run -d -p 5000:5000 flask
                 '''
             }
         }
