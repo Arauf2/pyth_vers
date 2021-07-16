@@ -16,7 +16,7 @@ pipeline {
             steps {
                 sh '''
                 echo 'Testing..'
-                docker images
+                docker ps
                 '''
             }
         }
